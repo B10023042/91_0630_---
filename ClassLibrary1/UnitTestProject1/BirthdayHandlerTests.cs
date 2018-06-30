@@ -11,15 +11,20 @@ namespace ClassLibrary1.Tests
         [TestMethod()]
         public void Is91BirthdayShouldReturnHappyBirthday()
         {
-            _fakeBirthdayHandler.SetDateTime(new DateTime(2018, 9, 1));
+            GivenToday(new DateTime(2018, 9, 1));
             Assert.AreEqual("Happy Birthday", _fakeBirthdayHandler.Is91Birthday());
         }
 
         [TestMethod()]
         public void IsNot91BirthdayShouldReturnNo()
         {
-            _fakeBirthdayHandler.SetDateTime(new DateTime(2018, 9, 2));
+            GivenToday(new DateTime(2018, 9, 2));
             Assert.AreEqual("No", _fakeBirthdayHandler.Is91Birthday());
+        }
+
+        private void GivenToday(DateTime dateTime)
+        {
+            _fakeBirthdayHandler.SetDateTime(dateTime);
         }
     }
 
