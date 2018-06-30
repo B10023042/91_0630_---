@@ -16,7 +16,7 @@ namespace ClassLibrary1
             return "No";
         }
 
-        internal virtual DateTime GetDateTime()
+        protected virtual DateTime GetDateTime()
         {
             return DateTime.Now;
         }
